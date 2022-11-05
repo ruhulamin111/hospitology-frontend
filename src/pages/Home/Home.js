@@ -1,4 +1,5 @@
 import React from 'react'
+import Achievement from '../../components/Achievement/Achievement'
 import Banner from '../../components/Banner/Banner'
 import Benefits from '../../components/Benefits/Benefits'
 import Category from '../../components/Category/Category'
@@ -13,6 +14,7 @@ const Home = () => {
       <Category />
       <Benefits />
       <Video />
+      <Achievement />
 
     </div>
   )
