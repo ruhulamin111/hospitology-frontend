@@ -5,15 +5,21 @@ import doctor2 from '../../assets/medical-workers-covid-19-vaccination-concept-c
 import doctor3 from '../../assets/portrait-smiling-male-doctor.jpg'
 import doctor4 from '../../assets/portrait-successful-young-doctor-with-folder-stethoscope.jpg'
 import doctor5 from '../../assets/doctor-with-his-arms-crossed-white-background.jpg'
+import { FaLongArrowAltRight } from 'react-icons/fa';
+
 
 
 const DoctorResult = () => {
 
+
     return (
         <div className='w-11/12 mx-auto py-10'>
-            <h1 className='text-4xl font-bold text-primary mb-5 '>Fall in love with <br /> <span className='text-secondary'>Our Specialist</span></h1>
+            <div className='flex items-center justify-between'>
+                <h1 className='text-4xl font-bold text-primary mb-5 '>Fall in love with <br /> <span className='text-secondary'>Our Specialist</span></h1>
+                <FaLongArrowAltRight className='text-3xl' />
+            </div>
             <Swiper
-                className=''
+                className='cursor-pointer'
                 spaceBetween={50}
                 slidesPerView={3}
                 onSlideChange={() => console.log('slide change')}
