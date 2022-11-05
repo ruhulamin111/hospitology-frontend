@@ -22,8 +22,6 @@ const DoctorResult = () => {
                 className='cursor-pointer'
                 spaceBetween={50}
                 slidesPerView={3}
-                onSlideChange={() => console.log('slide change')}
-                onSwiper={(swiper) => console.log(swiper)}
             >
                 <SwiperSlide className='my-10'>
                     <div className="card w-96 bg-base-100 shadow-xl">

@@ -3,7 +3,6 @@ import banner from '../../assets//computer-with-covid19-illustration-screen-stan
 
 const Banner = () => {
 
-
     return (
         <div className="hero h-screen object-cover" style={{ backgroundImage: `url(${banner})` }}>
             <div className="hero-overlay bg-opacity-70"></div>
