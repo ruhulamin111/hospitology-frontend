@@ -2,6 +2,8 @@ import React from 'react'
 import banner from '../../assets//computer-with-covid19-illustration-screen-standing-desk-empty-office-room-during-global-pandemic-modern-hospital-room-equipped-with-professional-medical-instruments-virus-cell-image.jpg'
 
 const Banner = () => {
+
+
     return (
         <div className="hero h-screen object-cover" style={{ backgroundImage: `url(${banner})` }}>
             <div className="hero-overlay bg-opacity-70"></div>
