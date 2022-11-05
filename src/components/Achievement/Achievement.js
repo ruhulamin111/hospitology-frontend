@@ -6,8 +6,8 @@ import { FaUserNurse } from 'react-icons/fa';
 const Achievement = () => {
 
     return (
-        <div className='w-11/12 mx-auto my-10'>
-            <h1 className='text-4xl font-bold text-primary mb-5'>We are achieved </h1>
+        <div className='w-11/12 mx-auto py-10'>
+            <h1 className='text-4xl font-bold text-primary mb-10'>We are achieved </h1>
             <div className="stats shadow w-full ">
                 <div className="stat">
                     <div className="stat-figure text-primary">

@@ -1,13 +1,15 @@
 import React from 'react'
 
 const Testimonial = () => {
+
     return (
-        <div className='w-11/12 mx-auto my-10'>
-            <h1 className='text-4xl font-bold text-primary mb-10 '>Patient reviews </h1>
+        <div className='w-11/12 mx-auto py-10'>
+            <h1 className='text-4xl font-bold text-primary mb-10'>Our patient reviews</h1>
+
             <div id="carouselExampleCaptions" class="carousel slide relative carousel-dark" data-bs-ride="carousel">
                 <div class="carousel-inner relative w-full overflow-hidden">
                     <div class="carousel-item active relative float-left w-full text-center">
-                        <p class="text-xl mx-auto text-gray-700 max-w-4xl">
+                        <p class="text-xl italic mx-auto text-gray-700 max-w-4xl">
                             "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet
                             numquam iure provident voluptate esse quasi, voluptas nostrum quisquam!"
                         </p>
@@ -21,7 +23,7 @@ const Testimonial = () => {
                         <p class="text-gray-500">- Anna Morian</p>
                     </div>
                     <div class="carousel-item relative float-left w-full text-center">
-                        <p class="text-xl  mx-auto text-gray-700 max-w-4xl">
+                        <p class="text-xl italic mx-auto text-gray-700 max-w-4xl">
                             "Neque cupiditate assumenda in maiores repudiandae mollitia adipisci maiores
                             repudiandae mollitia consectetur adipisicing architecto elit sed adipiscing
                             elit."
@@ -36,7 +38,7 @@ const Testimonial = () => {
                         <p class="text-gray-500">- Teresa May</p>
                     </div>
                     <div class="carousel-item relative float-left w-full text-center">
-                        <p class="text-xl  mx-auto text-gray-700 max-w-4xl">
+                        <p class="text-xl italic mx-auto text-gray-700 max-w-4xl">
                             "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
                             dolore eu fugiat nulla pariatur est laborum neque cupiditate assumenda in
                             maiores."
@@ -70,7 +72,7 @@ const Testimonial = () => {
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
-        </div >
+        </div>
     )
 }
 

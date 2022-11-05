@@ -13,7 +13,7 @@ const Category = () => {
 
     return (
         <div className='w-11/12 mx-auto py-10'>
-            <h1 className='text-4xl font-bold text-primary mb-5'>Fall in love with your <br /> <span className='text-secondary'>Doctors office</span></h1>
+            <h1 className='text-4xl font-bold text-primary mb-5 text-center'>Our Qualitiful <br /> <span className='text-secondary'>Services</span></h1>
             <div className="grid lg:grid-cols-3  gap-5">
                 <div className="card w-96 bg-base-100 shadow-xl">
                     <figure className="px-10 pt-10">

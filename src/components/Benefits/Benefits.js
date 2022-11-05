@@ -5,7 +5,7 @@ import { FaCheckCircle } from 'react-icons/fa';
 const Benefits = () => {
 
     return (
-        <div className="hero min-h-screen w-11/12 mx-auto">
+        <div className="hero py-10 w-11/12 mx-auto">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <img src={benefit} className="max-w-sm rounded-lg shadow-2xl" alt='' />
                 <div>
