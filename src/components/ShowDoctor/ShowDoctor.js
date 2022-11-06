@@ -21,7 +21,7 @@ const ShowDoctor = () => {
                         <p>Medicine</p>
                         <p>Hospitology Medical College Hospital</p>
                         <div className="card-actions">
-                            <Link to='' className="font-bold flex items-center gap-2 btn text-white mt-5">
+                            <Link to='/viewprofile' className="font-bold flex items-center gap-2 btn text-white mt-5">
                                 View profile
                                 <FaLongArrowAltRight />
                             </Link>

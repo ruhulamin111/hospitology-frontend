@@ -5,6 +5,8 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import 'tw-elements';
 import 'swiper/css';
+import 'react-day-picker/dist/style.css';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

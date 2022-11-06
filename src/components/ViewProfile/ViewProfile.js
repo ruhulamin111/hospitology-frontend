@@ -1,6 +1,7 @@
 import React from 'react'
 import CommonBanner from '../CommonBanner/CommonBanner'
 import doctor1 from '../../assets/woman-doctor-wearing-lab-coat-with-stethoscope-isolated.jpg'
+import { Link } from 'react-router-dom'
 
 
 const ViewProfile = () => {
@@ -13,8 +14,8 @@ const ViewProfile = () => {
                     <div className=''>
                         <img src={doctor1} className="object-cover w-full rounded-lg" alt='' />
                         <div className='flex justify-center gap-10 mt-10'>
-                            <button className="btn btn-primary">Appointment offline</button>
-                            <button className="btn btn-secondary text-white">Appointment online</button>
+                            <Link to='/offlineappointment' className="btn btn-primary">Appointment offline</Link>
+                            <Link to='/offlineappointment' className="btn btn-secondary text-white">Appointment online</Link>
                         </div>
                     </div>
                     <div>
