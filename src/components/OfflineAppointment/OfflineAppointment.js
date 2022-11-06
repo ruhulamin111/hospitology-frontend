@@ -43,18 +43,38 @@ const OfflineAppointment = () => {
                             <b>Visit Fee:</b> $ 500
                         </p>
                         {/* The button to open modal */}
-                        <label htmlFor="patient-info" className="btn btn-primary">Patient info</label>
+                        <label htmlFor="patient-info" className="btn btn-secondary text-white">Patient info</label>
                         <div>
                             {/* Put this part before </body> tag */}
                             <input type="checkbox" id="patient-info" className="modal-toggle" />
                             <div className="modal modal-bottom sm:modal-middle">
                                 <div className="modal-box">
                                     <label htmlFor="patient-info" className="btn btn-md btn-circle absolute right-2 top-2">✕</label>
-                                    <h3 className="font-bold text-lg">Congratulations random Internet user!</h3>
-                                    <p className="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
-                                    <div className="modal-action">
+                                    <h3 className="font-bold text-xl">Patient Information</h3>
+                                    <form className='text-center my-5'>
+                                        <input type="text" value={format(date, 'PP')} className="input input-bordered w-full max-w-sm mt-5" />
+
+                                        <select className="select select-bordered w-full max-w-sm mt-5">
+                                            <option disabled selected>Select slot</option>
+                                            <option>10.00-10.30</option>
+                                            <option>10.00-10.30</option>
+                                            <option>10.00-10.30</option>
+                                            <option>10.00-10.30</option>
+                                            <option>10.00-10.30</option>
+                                        </select>
+
+                                        <input type="number" placeholder="+88" className="input input-bordered w-full max-w-sm mt-5" />
+
+                                        <input type="text" placeholder="Patient name" className="input input-bordered w-full max-w-sm mt-5" />
+
+                                        <input type="email" placeholder="Address" className="input input-bordered w-full max-w-sm mt-5" />
+
+                                        <input type="submit" value='Submit' className=" btn btn-primary w-full max-w-sm mt-5" />
+
+                                    </form>
+                                    {/* <div className="modal-action">
                                         <label htmlFor="patient-info" className="btn">Submit</label>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         </div>
