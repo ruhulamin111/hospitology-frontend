@@ -56,11 +56,12 @@ const OfflineAppointment = () => {
 
                                         <select className="select select-bordered w-full max-w-sm mt-5">
                                             <option disabled selected>Select slot</option>
-                                            <option>10.00-10.30</option>
-                                            <option>10.00-10.30</option>
-                                            <option>10.00-10.30</option>
-                                            <option>10.00-10.30</option>
-                                            <option>10.00-10.30</option>
+                                            <option value='10:00-10:20'>10.00-10.20</option>
+                                            <option value='10:20-10:40'>10.20-10.40</option>
+                                            <option value='10:40-11:00'>10.40-11.00</option>
+                                            <option value='11:00-11:20'>11.00-11.20</option>
+                                            <option value='11:20-11:40'>11.20-11.40</option>
+                                            <option value='11:40-12:00'>11.40-12.00</option>
                                         </select>
 
                                         <input type="number" placeholder="+88" className="input input-bordered w-full max-w-sm mt-5" />

@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import service1 from '../../assets/24-hours.png'
-import service2 from '../../assets/charity.png'
-import service3 from '../../assets/hospital-bed.png'
-import service4 from '../../assets/studying.png'
-import service5 from '../../assets/father.png'
-import service6 from '../../assets/hospital (2).png'
+import service1 from '../../assets/24hours.png'
+import service2 from '../../assets/blooddonate.png'
+import service3 from '../../assets/superbed.png'
+import service4 from '../../assets/mothercare.png'
+import service5 from '../../assets/babycare.png'
+import service6 from '../../assets/specialdoctor.png'
 import { FaLongArrowAltRight } from 'react-icons/fa';
 
 

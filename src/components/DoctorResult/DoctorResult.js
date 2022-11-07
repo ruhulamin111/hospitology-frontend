@@ -1,16 +1,10 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import doctor1 from '../../assets/woman-doctor-wearing-lab-coat-with-stethoscope-isolated.jpg'
-import doctor2 from '../../assets/medical-workers-covid-19-vaccination-concept-confident-professional-doctor-female-nurse-blue-scrubs-stethoscope-show-thumbs-up-assure-guarantee-best-quality-service-clinic.jpg'
-import doctor3 from '../../assets/portrait-smiling-male-doctor.jpg'
-import doctor4 from '../../assets/portrait-successful-young-doctor-with-folder-stethoscope.jpg'
-import doctor5 from '../../assets/doctor-with-his-arms-crossed-white-background.jpg'
 import { FaLongArrowAltRight } from 'react-icons/fa';
-
-
+import useDoctors from '../../hooks/useDoctors/useDoctors';
 
 const DoctorResult = () => {
-
+    const [doctors] = useDoctors()
 
     return (
         <div className='w-11/12 mx-auto py-10'>
@@ -23,7 +17,23 @@ const DoctorResult = () => {
                 spaceBetween={50}
                 slidesPerView={3}
             >
-                <SwiperSlide className='my-10'>
+                {
+                    doctors?.slice(0, 5).map((doctor, index) => <SwiperSlide key={index} className='my-10'>
+                        <div className="card w-96 bg-base-100 shadow-xl">
+                            <figure className="px-10 pt-10">
+                                <img src={doctor.img} alt="Shoes" className="rounded-xl h-60 object-cover" />
+                            </figure>
+                            <div className="card-body items-center text-center">
+                                <h2 className="card-title">{doctor.name}</h2>
+                                <p>{doctor.department}</p>
+                                <p>{doctor.branchname}</p>
+                                <p>Hotline: {doctor.hotline}</p>
+                            </div>
+                        </div>
+                    </SwiperSlide>)
+                }
+
+                {/* <SwiperSlide className='my-10'>
                     <div className="card w-96 bg-base-100 shadow-xl">
                         <figure className="px-10 pt-10">
                             <img src={doctor1} alt="Shoes" className="rounded-xl h-60 object-cover" />
@@ -87,7 +97,7 @@ const DoctorResult = () => {
                             <p>Hotline: +88012345679, +880134569872</p>
                         </div>
                     </div>
-                </SwiperSlide>
+                </SwiperSlide> */}
 
             </Swiper>
         </div>

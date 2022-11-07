@@ -1,5 +1,5 @@
 import React from 'react'
-import banner from '../../assets//computer-with-covid19-illustration-screen-standing-desk-empty-office-room-during-global-pandemic-modern-hospital-room-equipped-with-professional-medical-instruments-virus-cell-image.jpg'
+import banner from '../../assets/chamber.jpg'
 
 const Banner = () => {
 
@@ -9,35 +9,25 @@ const Banner = () => {
             <div className="hero-content text-center text-neutral-content">
                 <div className="max-w-md">
                     <h1 className="mb-5 text-5xl font-bold text-secondary">Find Your Doctor</h1>
-                    <p className="mb-5 text-white">To serve the humanity as a whole with this noble vision the Ibn Sina Trust started its journey in June 1992. </p>
+                    <p className="mb-5 text-white">To serve the humanity as a whole with this noble vision Hospitology journey in June 1992. </p>
                     <div className='mb-5'>
                         <select className="select select-bordered w-full max-w-xs text-black">
                             <option disabled selected>Select branch name</option>
-                            <option>Mirpur, Dhaka, Bangladesh</option>
-                            <option>Dhanmondi, Dhaka, Bangladesh</option>
-                            <option>Gulshan, Dhaka, Bangladesh</option>
-                            <option>Uttara, Dhaka, Bangladesh</option>
-                            <option>Mymensingh, Bangladesh</option>
-                            <option>Jamalpur, Bangladesh</option>
-                            <option>Chittagong, Bangladesh</option>
-                            <option>Rajshahi, Bangladesh</option>
-                            <option>Sylhet, Bangladesh</option>
-                            <option>Jessore, Bangladesh</option>
+                            <option value='Mirpur'>Mirpur, Dhaka, Bangladesh</option>
+                            <option value='Uttara'>Uttara, Dhaka, Bangladesh</option>
+                            <option value='Dhanmondi'>Dhanmondi, Dhaka, Bangladesh</option>
+                            <option value='Gulshan'>Gulshan, Dhaka, Bangladesh</option>
+                            <option value='Mohammadpur'>Mohammadpur, Dhaka, Bangladesh</option>
                         </select>
                     </div>
                     <div className='mb-5'>
                         <select className="select select-bordered w-full max-w-xs text-black">
                             <option disabled selected>Select department name</option>
-                            <option>Medicine</option>
-                            <option>Cardiology</option>
-                            <option>Neurology</option>
-                            <option>Sergury</option>
-                            <option>Dental</option>
-                            <option>Orthopedic and Spine Surgery</option>
-                            <option>Radiology and Imaging</option>
-                            <option>Plastic Surgery and Sonology</option>
-                            <option>Vascular Sergery and Headache</option>
-                            <option>Urology and Pysicial Medicine </option>
+                            <option value='Medicine'>Medicine and Orthopedic</option>
+                            <option value='Cardiology'>Cardiology and Vascular Sergery</option>
+                            <option value='Neurology'>Neurology and Spine Surgery</option>
+                            <option value='Radiology'>Radiology and Imaging</option>
+                            <option value='Dental'>Dental and Headache</option>
                         </select>
                     </div>
                     <button className="btn btn-secondary text-white">Search</button>

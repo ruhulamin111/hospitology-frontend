@@ -1,5 +1,5 @@
 import React from 'react'
-import benefit from '../../assets/radiologist_17.jpg'
+import benefit from '../../assets/onlineconsulting.jpg'
 import { FaCheckCircle } from 'react-icons/fa';
 
 const Benefits = () => {
