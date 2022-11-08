@@ -2,9 +2,10 @@ import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
-
 import auth from '../../firebase.init';
 import Loading from '../Loading/Loading';
+import CommonBanner from '../CommonBanner/CommonBanner';
+import { FaFacebook, FaGoogle, FaPhone } from 'react-icons/fa';
 
 const Signin = () => {
     const [signInWithGoogle, gUser, gLoadding, gError] = useSignInWithGoogle(auth);
@@ -30,52 +31,76 @@ const Signin = () => {
     }
 
     return (
-        <div className='flex justify-center h-scree pb-5 items-center'>
-            <div className="card w-96 bg-base-100 shadow-xl pb-4">
-                <div className="card-body items-center text-center">
-                    <h2 className="card-title mb-4">Sign in</h2>
-                    <form onSubmit={handleSubmit(onSubmit)} className=' w-full'>
-                        <div className="form-control ">
-                            <label className="label">
-                                <span className="label-text">Email </span>
-                            </label>
-                            <input type="text" placeholder="Email" className="input input-bordered w-full "
-                                {...register("email", {
-                                    required: { value: true, message: 'Email is required' },
-                                    pattern: { value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/, message: 'Provide a valid email' }
-                                })}
-                            />
-                            <label className="label">
-                                {errors.email?.type === 'required' && <span className="label-text-alt">{errors.email.message}</span>}
-                                {errors.email?.type === 'pattern' && <span className="label-text-alt">{errors.email.message}</span>}
-                            </label>
-                        </div>
+        <section>
+            <CommonBanner />
 
-                        <div className="form-control w-full max-w-xs">
-                            <label className="label">
-                                <span className="label-text">Password</span>
-                            </label>
-                            <input type="password" placeholder="Password" className="input input-bordered w-full max-w-xs"
-                                {...register("password", {
-                                    required: { value: true, message: 'Password is required' },
-                                    pattern: { value: /(?=.*[!@#$%^&*])/, message: 'Password is at least one speacial character' }
-                                })}
-                            />
-                            <label className="label">
-                                {errors.password?.type === 'required' && <span className="label-text-alt">{errors.password.message}</span>}
-                                {errors.password?.type === 'pattern' && <span className="label-text-alt">{errors.password.message}</span>}
-                            </label>
-                        </div>
+            <div className='lg:flex justify-center my-10'>
+                <div className="card lg:w-6/12 mx-auto shadow-xl ">
+                    <div className='bg-secondary text-white w-full rounded-tl-lg py-5 text-center'>
+                        <h2 className="text-3xl font-semibold mb-2">Sign in</h2>
+                        <h3 className="text-xl">Stay connect with us</h3>
+                    </div>
 
-                        <input type='submit' value='Sign in' className="btn btn-neutral w-full mt-4"></input>
-                        {userError}
-                    </form>
-                    <p className='pt-2'>New to Brimstone University? <br /> <Link className='text-neutral' to='/signup'>Create an account</Link></p>
-                    <div className="divider">OR</div>
-                    <button className="btn btn-outline btn-primary w-full" onClick={() => signInWithGoogle()} >Continue with google</button>
+                    <div className="card-body items-center text-center">
+                        <form onSubmit={handleSubmit(onSubmit)} className=' w-full'>
+                            <div className="form-control ">
+                                <label className="label">Email</label>
+                                <input type="text" placeholder="Email"
+                                    className="input input-bordered w-full "
+                                    {...register("email", {
+                                        required: { value: true, message: 'Email is required' },
+                                        pattern: { value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/, message: 'Provide a valid email' }
+                                    })}
+                                />
+                                <label className="label ">
+                                    {errors.email?.type === 'required' && <span className="label-text-alt text-red-500 text-sm">{errors.email.message}</span>}
+                                    {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500 text-sm">{errors.email.message}</span>}
+                                </label>
+                            </div>
+
+                            <div className="form-control ">
+                                <label className="label">Password</label>
+                                <input type="password" placeholder="Password"
+                                    className="input input-bordered w-full "
+                                    {...register("password", {
+                                        required: { value: true, message: 'Password is required' },
+                                        pattern: { value: /(?=.*[!@#$%^&*])/, message: 'Password is at least one speacial character' }
+                                    })}
+                                />
+                                <label className="label">
+                                    {errors.password?.type === 'required' && <span className="label-text-alt text-red-500 text-sm">{errors.password.message}</span>}
+                                    {errors.password?.type === 'pattern' && <span className="label-text-alt text-red-500 text-sm">{errors.password.message}</span>}
+                                </label>
+                            </div>
+                            <div className='flex justify-between'>
+                                <div className='cursor-pointer '>
+                                    <input type="checkbox" name="" id="" className='mr-2' />
+                                    <span>Remember me</span>
+                                </div>
+                                <div className='cursor-pointer'>
+                                    <span>Forgot password?</span>
+                                </div>
+                            </div>
+                            <input type='submit' value='Sign in' className="btn btn-secondary w-full text-white my-5"></input>
+                            {userError}
+                        </form>
+
+                        <div className="divider">Or Sign in With</div>
+                        {/* <button className="btn btn-outline btn-primary w-full" onClick={() => signInWithGoogle()} >Continue with google</button> */}
+
+                        {/* <Link to='/' className='text-md p-3 rounded-full border border-primary hover:border-secondary hover:bg-secondary duration-300 ease-in   hover:text-white'><FaGoogle /></Link> */}
+                        <div className='flex gap-5'>
+                            <p onClick={() => signInWithGoogle()} className='cursor-pointer text-md p-3 rounded-full border border-primary hover:border-secondary hover:bg-secondary duration-300 ease-in   hover:text-white'><FaGoogle /></p>
+                            <p className='cursor-pointer text-md p-3 rounded-full border border-primary hover:border-secondary hover:bg-secondary hover:text-white duration-300 ease-in '><FaFacebook /></p>
+                            <p className='cursor-pointer text-md p-3 rounded-full border border-primary hover:border-secondary hover:bg-secondary hover:text-white duration-300 ease-in '><FaPhone /></p>
+                        </div>
+                        <p className='pt-5'>Don’t Have an Account?
+                            <Link className='text-primary' to='/signup'> Create One</Link>
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 
