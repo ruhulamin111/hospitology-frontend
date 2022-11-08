@@ -11,6 +11,7 @@ const OfflineAppointment = () => {
     const { id } = useParams();
     const [doctorDetails] = useDoctorDetails(id)
     const [close, setClose] = useState(false)
+    console.log(close);
 
     const handleSubmit = (event) => {
         event.preventDefault()

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import CommonBanner from '../CommonBanner/CommonBanner'
 import { Link, useParams } from 'react-router-dom'
 import useDoctorDetails from '../../hooks/useDoctorDetails/useDoctorDetails';
