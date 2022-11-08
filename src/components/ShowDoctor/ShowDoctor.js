@@ -22,7 +22,7 @@ const ShowDoctor = ({ searchDoctors }) => {
                             <p>{doctor.department}</p>
                             <p>{doctor.branchname}</p>
                             <div className="card-actions">
-                                <Link to='/viewprofile' className="font-bold flex items-center gap-2 btn text-white mt-5">
+                                <Link to={`/viewprofile/${doctor._id}`} className="font-bold flex items-center gap-2 btn text-white mt-5">
                                     Profile
                                     <FaLongArrowAltRight />
                                 </Link>
