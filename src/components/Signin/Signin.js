@@ -6,6 +6,7 @@ import auth from '../../firebase.init';
 import Loading from '../Loading/Loading';
 import CommonBanner from '../CommonBanner/CommonBanner';
 import { FaFacebook, FaGoogle, FaPhone } from 'react-icons/fa';
+import signin from '../../assets/login.jpg'
 
 const Signin = () => {
     const [signInWithGoogle, gUser, gLoadding, gError] = useSignInWithGoogle(auth);
@@ -34,11 +35,14 @@ const Signin = () => {
         <section>
             <CommonBanner />
 
-            <div className='lg:flex justify-center my-10'>
-                <div className="card lg:w-6/12 mx-auto shadow-xl ">
-                    <div className='bg-secondary text-white w-full rounded-tl-lg py-5 text-center'>
-                        <h2 className="text-3xl font-semibold mb-2">Sign in</h2>
-                        <h3 className="text-xl">Stay connect with us</h3>
+            <div className='lg:grid-cols-2 grid items-center my-10 w-11/12 mx-auto gap-5'>
+                <div>
+                    <img src={signin} alt="" className='w-full' />
+                </div>
+                <div className="card lg:w-full shadow-xl ">
+                    <div className='bg-secondary text-white w-full rounded-tl-lg py-2 text-center'>
+                        <h2 className="text-2xl font-semibold">Sign in</h2>
+                        <h3 className="text-lg">Stay connect with us</h3>
                     </div>
 
                     <div className="card-body items-center text-center">
@@ -81,7 +85,7 @@ const Signin = () => {
                                     <span>Forgot password?</span>
                                 </div>
                             </div>
-                            <input type='submit' value='Sign in' className="btn btn-secondary w-full text-white my-5"></input>
+                            <input type='submit' value='Sign in' className="btn btn-secondary w-full text-white mt-5"></input>
                             {userError}
                         </form>
 
@@ -94,11 +98,12 @@ const Signin = () => {
                             <p className='cursor-pointer text-md p-3 rounded-full border border-primary hover:border-secondary hover:bg-secondary hover:text-white duration-300 ease-in '><FaFacebook /></p>
                             <p className='cursor-pointer text-md p-3 rounded-full border border-primary hover:border-secondary hover:bg-secondary hover:text-white duration-300 ease-in '><FaPhone /></p>
                         </div>
-                        <p className='pt-5'>Don’t Have an Account?
+                        <p className='pt-2'>Don’t Have an Account?
                             <Link className='text-primary' to='/signup'> Create One</Link>
                         </p>
                     </div>
                 </div>
+
             </div>
         </section>
     );
