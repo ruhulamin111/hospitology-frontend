@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import OfflineAppointment from './components/OfflineAppointment/OfflineAppointment';
+import RequireAuth from './components/RequireAuth/RequireAuth';
 import Signin from './components/Signin/Signin';
 import Signup from './components/Signup/Signup';
 import ViewProfile from './components/ViewProfile/ViewProfile';
@@ -18,7 +19,9 @@ function App() {
         <Route path='/' element={<Home />}></Route>
         <Route path='/about' element={<About />}></Route>
         <Route path='/viewprofile/:id' element={<ViewProfile />}></Route>
-        <Route path='/offlineappointment/:id' element={<OfflineAppointment />}></Route>
+        <Route path='/offlineappointment/:id' element={<RequireAuth>
+          <OfflineAppointment />
+        </RequireAuth>}></Route>
         <Route path='/signin' element={<Signin />}></Route>
         <Route path='/signup' element={<Signup />}></Route>
 
