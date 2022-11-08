@@ -10,13 +10,14 @@ const OfflineAppointment = () => {
     const [date, setDate] = useState(new Date())
     const { id } = useParams();
     const [doctorDetails] = useDoctorDetails(id)
+    const [close, setClose] = useState(false)
 
     const handleSubmit = (event) => {
         event.preventDefault()
         const name = event.target.name.value;
         const phone = event.target.phone.value;
         console.log('form', name, phone)
-
+        setClose(true)
     }
 
 
@@ -60,6 +61,7 @@ const OfflineAppointment = () => {
                         <label htmlFor="patient-info" className="btn btn-secondary text-white">Patient info</label>
                         <div>
                             {/* Put this part before </body> tag */}
+
                             <input type="checkbox" id="patient-info" className="modal-toggle" />
                             <div className="modal modal-bottom sm:modal-middle">
                                 <div className="modal-box">
@@ -92,12 +94,14 @@ const OfflineAppointment = () => {
                                         <input type="submit" value='Submit' className=" btn btn-primary w-full max-w-sm mt-5" >
                                         </input>
 
+
                                     </form>
                                     {/* <div className="modal-action">
                                         <label htmlFor="patient-info" className="btn">Submit</label>
                                     </div> */}
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
