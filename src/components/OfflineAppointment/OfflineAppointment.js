@@ -4,6 +4,8 @@ import { DayPicker } from 'react-day-picker';
 import { format } from 'date-fns';
 import { useParams } from 'react-router-dom';
 import useDoctorDetails from '../../hooks/useDoctorDetails/useDoctorDetails';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 
 const OfflineAppointment = () => {
@@ -11,16 +13,35 @@ const OfflineAppointment = () => {
     const { id } = useParams();
     const [doctorDetails] = useDoctorDetails(id)
     const [close, setClose] = useState(false)
-    console.log(close);
+    const [user] = useAuthState(auth)
 
     const handleSubmit = (event) => {
         event.preventDefault()
         const name = event.target.name.value;
         const phone = event.target.phone.value;
-        console.log('form', name, phone)
+        const address = event.target.address.value;
+        const slot = event.target.slot.value;
+        const booking = {
+            doctor: doctorDetails.name,
+            date: format(date, 'PP'),
+            email: user.email,
+            phone,
+            name,
+            address,
+            slot,
+        }
+
+        fetch('http://localhost:5000/bookings', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(booking)
+        }).then(res => res.json()).then(data => console.log(data))
+
+
         setClose(true)
     }
-
 
 
     return (
@@ -90,7 +111,7 @@ const OfflineAppointment = () => {
 
                                             <input name='name' type="text" placeholder="Patient name" className="input input-bordered w-full max-w-sm mt-5" required />
 
-                                            <input name='' type="email" placeholder="Address" className="input input-bordered w-full max-w-sm mt-5" />
+                                            <input name='address' type="text" placeholder="Address" className="input input-bordered w-full max-w-sm mt-5" />
 
                                             <input type="submit" value='Submit' className=" btn btn-primary w-full max-w-sm mt-5" >
                                             </input>

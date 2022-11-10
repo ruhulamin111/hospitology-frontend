@@ -146,9 +146,9 @@ const Header = () => {
                 <div className="navbar-end">
                     {
                         user ?
-                            <span onClick={() => signOut(auth)} className="text-3xl text-secondary p-2 border rounded-full border-secondary hover:bg-secondary hover:text-white duration-300 ease-in">
+                            <Link onClick={() => signOut(auth)} className="text-3xl text-secondary p-2 border rounded-full border-secondary hover:bg-secondary hover:text-white duration-300 ease-in">
                                 <AiOutlineLogout />
-                            </span>
+                            </Link>
                             :
                             <Link to='/signin' className="text-3xl text-secondary p-2 border rounded-full border-secondary hover:bg-secondary hover:text-white duration-300 ease-in">
                                 <FaUserCircle />
