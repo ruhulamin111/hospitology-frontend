@@ -62,46 +62,48 @@ const OfflineAppointment = () => {
                         <label htmlFor="patient-info" className="btn btn-secondary text-white">Patient info</label>
                         <div>
                             {/* Put this part before </body> tag */}
+                            {close === false && <>
+                                <input type="checkbox" id="patient-info" className="modal-toggle" />
+                                <div className="modal modal-bottom sm:modal-middle">
+                                    <div className="modal-box">
+                                        <label htmlFor="patient-info" className="btn btn-md btn-circle absolute right-2 top-2">✕</label>
+                                        <h3 className="font-bold text-xl">Patient Information</h3>
+                                        <form onSubmit={handleSubmit} className='text-center my-5'>
+                                            <input type="text" value={format(date, 'PP')} className="input input-bordered w-full max-w-sm mt-5" />
 
-                            <input type="checkbox" id="patient-info" className="modal-toggle" />
-                            <div className="modal modal-bottom sm:modal-middle">
-                                <div className="modal-box">
-                                    <label htmlFor="patient-info" className="btn btn-md btn-circle absolute right-2 top-2">✕</label>
-                                    <h3 className="font-bold text-xl">Patient Information</h3>
-                                    <form onSubmit={handleSubmit} className='text-center my-5'>
-                                        <input type="text" value={format(date, 'PP')} className="input input-bordered w-full max-w-sm mt-5" />
+                                            <select name='slot' className="select select-bordered w-full max-w-sm mt-5">
+                                                <option disabled selected>Select slot</option>
+                                                {
+                                                    doctorDetails.visithour?.map((slot, index) => <option key={index} value='10:00-10:20'>{slot}</option>
+                                                    )
+                                                }
 
-                                        <select name='slot' className="select select-bordered w-full max-w-sm mt-5">
-                                            <option disabled selected>Select slot</option>
-                                            {
-                                                doctorDetails.visithour?.map((slot, index) => <option key={index} value='10:00-10:20'>{slot}</option>
-                                                )
-                                            }
-
-                                            {/* <option value='10:00-10:20'>10.00-10.20</option>
+                                                {/* <option value='10:00-10:20'>10.00-10.20</option>
                                             <option value='10:20-10:40'>10.20-10.40</option>
                                             <option value='10:40-11:00'>10.40-11.00</option>
                                             <option value='11:00-11:20'>11.00-11.20</option>
                                             <option value='11:20-11:40'>11.20-11.40</option>
                                             <option value='11:40-12:00'>11.40-12.00</option> */}
-                                        </select>
+                                            </select>
 
-                                        <input name='phone' type="number" placeholder="+88" className="input input-bordered w-full max-w-sm mt-5" required />
+                                            <input name='phone' type="number" placeholder="+88" className="input input-bordered w-full max-w-sm mt-5" required />
 
-                                        <input name='name' type="text" placeholder="Patient name" className="input input-bordered w-full max-w-sm mt-5" required />
+                                            <input name='name' type="text" placeholder="Patient name" className="input input-bordered w-full max-w-sm mt-5" required />
 
-                                        <input name='' type="email" placeholder="Address" className="input input-bordered w-full max-w-sm mt-5" />
+                                            <input name='' type="email" placeholder="Address" className="input input-bordered w-full max-w-sm mt-5" />
 
-                                        <input type="submit" value='Submit' className=" btn btn-primary w-full max-w-sm mt-5" >
-                                        </input>
+                                            <input type="submit" value='Submit' className=" btn btn-primary w-full max-w-sm mt-5" >
+                                            </input>
 
 
-                                    </form>
-                                    {/* <div className="modal-action">
+                                        </form>
+                                        {/* <div className="modal-action">
                                         <label htmlFor="patient-info" className="btn">Submit</label>
                                     </div> */}
+                                    </div>
                                 </div>
-                            </div>
+                            </>
+                            }
 
                         </div>
                     </div>

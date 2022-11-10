@@ -24,8 +24,11 @@ const Signin = () => {
     }
 
     const onSubmit = (data) => {
-        console.log(data)
-        createUserWithEmailAndPassword(data.email, data.password)
+        if (data.password === data.confirmpassword) {
+            createUserWithEmailAndPassword(data.email, data.password)
+        } else {
+            userError = <p>Password dont't match</p>
+        }
     };
     if (user || gUser) {
         navigate(from, { replace: true })
@@ -35,11 +38,18 @@ const Signin = () => {
         <section>
             <CommonBanner />
 
-            <div className='lg:grid-cols-2 grid my-10 w-11/12 mx-auto gap-5'>
+            <div className='lg:grid-cols-2 grid my-10 w-11/12 mx-auto gap-5 items-center'>
                 <div className='p-10'>
                     <div>
                         <h1 className='text-3xl font-bold mb-5 text-secondary'>A Modern approach to <br />
                             primary care</h1>
+                        <div className='flex gap-5 mb-5'>
+                            <img className='h-16' src={signin} alt="" />
+                            <div>
+                                <h2 className='text-lg mb-2 font-bold'>Primary care for all ages</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae eveniet beatae natus quidem ipsam rerum?</p>
+                            </div>
+                        </div>
                         <div className='flex gap-5 mb-5'>
                             <img className='h-16' src={signin} alt="" />
                             <div>
@@ -71,8 +81,24 @@ const Signin = () => {
 
                     <div className="card-body items-center text-center">
                         <form onSubmit={handleSubmit(onSubmit)} className=' w-full'>
+
                             <div className="form-control ">
-                                <label className="label">Email</label>
+                                <label className="label">Name*</label>
+                                <input type="text" placeholder="Name"
+                                    className="input input-bordered w-full "
+                                    {...register("name", {
+                                        required: { value: true, message: 'Name is required' },
+                                        pattern: { value: /@[a-z]/, message: 'Provide your full name' }
+                                    })}
+                                />
+                                <label className="label ">
+                                    {errors.name?.type === 'required' && <span className="label-text-alt text-red-500 text-sm">{errors.name.message}</span>}
+                                    {errors.name?.type === 'pattern' && <span className="label-text-alt text-red-500 text-sm">{errors.name.message}</span>}
+                                </label>
+                            </div>
+
+                            <div className="form-control ">
+                                <label className="label">Email*</label>
                                 <input type="text" placeholder="Email"
                                     className="input input-bordered w-full "
                                     {...register("email", {
@@ -87,7 +113,7 @@ const Signin = () => {
                             </div>
 
                             <div className="form-control ">
-                                <label className="label">Password</label>
+                                <label className="label">Password*</label>
                                 <input type="password" placeholder="Password"
                                     className="input input-bordered w-full "
                                     {...register("password", {
@@ -100,6 +126,22 @@ const Signin = () => {
                                     {errors.password?.type === 'pattern' && <span className="label-text-alt text-red-500 text-sm">{errors.password.message}</span>}
                                 </label>
                             </div>
+
+                            <div className="form-control ">
+                                <label className="label">Confirm Password*</label>
+                                <input type="password" placeholder="Confirm Password"
+                                    className="input input-bordered w-full "
+                                    {...register("confirmpassword", {
+                                        required: { value: true, message: 'Confirm Password is required' },
+                                        pattern: { value: /(?=.*[!@#$%^&*])/, message: 'Confirm Password is at least one speacial character' }
+                                    })}
+                                />
+                                <label className="label">
+                                    {errors.confirmpassword?.type === 'required' && <span className="label-text-alt text-red-500 text-sm">{errors.confirmpassword.message}</span>}
+                                    {errors.confirmpassword?.type === 'pattern' && <span className="label-text-alt text-red-500 text-sm">{errors.confirmpassword.message}</span>}
+                                </label>
+                            </div>
+
                             <div className='flex justify-between'>
                                 <div className='cursor-pointer '>
                                     <input type="checkbox" name="" id="" className='mr-2' />
