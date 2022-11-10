@@ -1,8 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { FaUserCircle } from 'react-icons/fa';
+import { AiOutlineLogout } from 'react-icons/ai';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import { signOut } from 'firebase/auth';
 
 const Header = () => {
+    const [user] = useAuthState(auth)
+
+
     return (
         <div className="shadow-md ">
             <div className='navbar h-20 w-11/12 mx-auto font-bold'>
@@ -63,11 +70,6 @@ const Header = () => {
                                             Dental service
                                         </Link>
                                     </li>
-                                    <li >
-                                        <Link className='duration-300 ease-in hover:text-secondary' to='/'>
-                                            Health checkup package
-                                        </Link>
-                                    </li>
                                 </ul>
                             </li>
                             <li >
@@ -93,7 +95,7 @@ const Header = () => {
                                 Doctors
                                 <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
                             </Link>
-                            <ul className="p-2">
+                            <ul className="p-2 bg-white">
                                 <li >
                                     <Link className='duration-300 ease-in hover:text-secondary' to='/'>
                                         Department wise
@@ -116,7 +118,7 @@ const Header = () => {
                                 Our services
                                 <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
                             </Link>
-                            <ul className="p-2">
+                            <ul className="p-2 bg-white">
                                 <li >
                                     <Link className='duration-300 ease-in hover:text-secondary' to='/'>
                                         Hospital service
@@ -132,11 +134,6 @@ const Header = () => {
                                         Dental service
                                     </Link>
                                 </li>
-                                <li >
-                                    <Link className='duration-300 ease-in hover:text-secondary' to='/'>
-                                        Health checkup package
-                                    </Link>
-                                </li>
                             </ul>
                         </li>
                         <li >
@@ -147,9 +144,17 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link to='/' className="text-3xl text-secondary p-2 border rounded-full border-secondary hover:bg-secondary hover:text-white duration-300 ease-in">
-                        <FaUserCircle />
-                    </Link>
+                    {
+                        user ?
+                            <span onClick={() => signOut(auth)} className="text-3xl text-secondary p-2 border rounded-full border-secondary hover:bg-secondary hover:text-white duration-300 ease-in">
+                                <AiOutlineLogout />
+                            </span>
+                            :
+                            <Link to='/signin' className="text-3xl text-secondary p-2 border rounded-full border-secondary hover:bg-secondary hover:text-white duration-300 ease-in">
+                                <FaUserCircle />
+                            </Link>
+                    }
+
                 </div>
             </div>
         </div >

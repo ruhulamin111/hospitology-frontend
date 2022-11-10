@@ -7,6 +7,7 @@ import Loading from '../Loading/Loading';
 import CommonBanner from '../CommonBanner/CommonBanner';
 import { FaFacebook, FaGoogle, FaPhone } from 'react-icons/fa';
 import signin from '../../assets/login.jpg'
+import { updateProfile } from 'firebase/auth';
 
 const Signin = () => {
     const [signInWithGoogle, gUser, gLoadding, gError] = useSignInWithGoogle(auth);
@@ -23,9 +24,11 @@ const Signin = () => {
         return <Loading></Loading>
     }
 
-    const onSubmit = (data) => {
+    const onSubmit = async (data) => {
         if (data.password === data.confirmpassword) {
-            createUserWithEmailAndPassword(data.email, data.password)
+            await createUserWithEmailAndPassword(data.email, data.password)
+            await updateProfile({ displayName: data.name })
+
         } else {
             userError = <p>Password dont't match</p>
         }
