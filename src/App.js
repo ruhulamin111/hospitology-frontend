@@ -10,7 +10,7 @@ import Footer from './pages/Footer/Footer';
 import Header from './pages/Header/Header';
 import Home from './pages/Home/Home';
 import NotFound from './pages/NotFound/NotFound';
-import { Toaster } from 'react-hot-toast';
+import { ToastContainer } from 'react-toastify';
 
 
 function App() {
@@ -30,7 +30,7 @@ function App() {
         <Route path='*' element={<NotFound />}></Route>
       </Routes>
       <Footer />
-      <Toaster />
+      <ToastContainer />
     </div>
   );
 }
