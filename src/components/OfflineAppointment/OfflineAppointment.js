@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 import useDoctorDetails from '../../hooks/useDoctorDetails/useDoctorDetails';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import toast from 'react-hot-toast';
 
 
 const OfflineAppointment = () => {
@@ -37,7 +38,7 @@ const OfflineAppointment = () => {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(booking)
-        }).then(res => res.json()).then(data => console.log(data))
+        }).then(res => res.json()).then(data => { toast('Your booking is complete') })
 
 
         setClose(true)

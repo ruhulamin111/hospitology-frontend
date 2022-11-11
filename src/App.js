@@ -10,6 +10,8 @@ import Footer from './pages/Footer/Footer';
 import Header from './pages/Header/Header';
 import Home from './pages/Home/Home';
 import NotFound from './pages/NotFound/NotFound';
+import { Toaster } from 'react-hot-toast';
+
 
 function App() {
   return (
@@ -28,6 +30,7 @@ function App() {
         <Route path='*' element={<NotFound />}></Route>
       </Routes>
       <Footer />
+      <Toaster />
     </div>
   );
 }
