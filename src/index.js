@@ -6,7 +6,8 @@ import { BrowserRouter } from 'react-router-dom';
 import 'tw-elements';
 import 'swiper/css';
 import 'react-day-picker/dist/style.css';
-import { useQuery, useMutation, useQueryClient, QueryClient, QueryClientProvider } from 'react-query'
+import { QueryClient, QueryClientProvider } from 'react-query'
+
 
 const queryClient = new QueryClient()
 
