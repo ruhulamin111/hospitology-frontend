@@ -47,6 +47,7 @@ const OfflineAppointment = () => {
                     toast.error('Already have a booking')
                 }
             })
+
         setClose(true)
     }
 
