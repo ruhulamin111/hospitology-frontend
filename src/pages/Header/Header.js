@@ -77,6 +77,13 @@ const Header = () => {
                                     About us
                                 </Link>
                             </li>
+                            {
+                                user && <li >
+                                    <Link className='duration-300 ease-in hover:text-secondary' to='/dashboard'>
+                                        Dashboard
+                                    </Link>
+                                </li>
+                            }
                         </ul>
                     </div>
                     <Link to='/' className="normal-case text-3xl text-secondary hover:text-primary duration-300 ease-in">Hospitology</Link>
@@ -141,6 +148,13 @@ const Header = () => {
                                 About us
                             </Link>
                         </li>
+                        {
+                            user && <li >
+                                <Link className='duration-300 ease-in hover:text-secondary' to='/dashboard'>
+                                    Dashboard
+                                </Link>
+                            </li>
+                        }
                     </ul>
                 </div>
                 <div className="navbar-end">

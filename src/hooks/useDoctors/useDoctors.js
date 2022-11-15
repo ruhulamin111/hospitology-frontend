@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react'
 
-function useDoctors(date, doctor) {
+function useDoctors() {
     const [doctors, setDoctors] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/available?date=${date}&doctor=${doctor}`)
+        fetch(`http://localhost:5000/doctors`)
             .then(res => res.json())
             .then(data => setDoctors(data))
-    }, [date, doctor])
+    }, [])
 
     return [doctors, setDoctors]
 }

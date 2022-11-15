@@ -12,6 +12,9 @@ import Home from './pages/Home/Home';
 import NotFound from './pages/NotFound/NotFound';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Dashboard from './components/Dashboard/Dashboard';
+import ListAppointment from './components/ListAppointment/ListAppointment';
+import Payment from './components/Payment/Payment';
 
 
 
@@ -29,6 +32,15 @@ function App() {
         </RequireAuth>}></Route>
         <Route path='/signin' element={<Signin />}></Route>
         <Route path='/signup' element={<Signup />}></Route>
+        <Route path='/dashboard' element={
+          <RequireAuth>
+            <Dashboard></Dashboard>
+          </RequireAuth>
+        }>
+          <Route index element={<ListAppointment />}></Route>
+          <Route path='listappointment' element={<ListAppointment />}></Route>
+          <Route path='payment' element={<Payment />}></Route>
+        </Route>
 
         <Route path='*' element={<NotFound />}></Route>
       </Routes>

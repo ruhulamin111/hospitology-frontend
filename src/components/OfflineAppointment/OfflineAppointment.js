@@ -41,7 +41,7 @@ const OfflineAppointment = () => {
         })
             .then(res => res.json())
             .then(data => {
-                if (data.success) {
+                if (data.success === true) {
                     toast.success('Your booking is complete')
                 } else {
                     toast.error('Already have a booking')
