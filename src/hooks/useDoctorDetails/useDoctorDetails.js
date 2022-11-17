@@ -4,7 +4,7 @@ const useDoctorDetails = (id) => {
     const [doctorDetails, setDoctorDetails] = useState('')
 
     useEffect(() => {
-        fetch(`http://localhost:5000/doctors/${id}`)
+        fetch(`https://hospitology-backend-production.up.railway.app/doctors/${id}`)
             .then(res => res.json())
             .then(data => setDoctorDetails(data))
     }, [id])

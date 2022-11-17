@@ -7,7 +7,7 @@ const ListAppointment = () => {
     const [appointment, setAppointment] = useState([])
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/bookings?email=${user.email}`)
+            fetch(`https://hospitology-backend-production.up.railway.app/bookings?email=${user.email}`)
                 .then(res => res.json())
                 .then(data => setAppointment(data))
         }
@@ -38,7 +38,7 @@ const ListAppointment = () => {
                     </tbody>
                 </table>
             </div>
-        </div>
+        </div >
     )
 }
 

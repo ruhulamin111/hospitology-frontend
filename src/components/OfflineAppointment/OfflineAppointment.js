@@ -32,7 +32,7 @@ const OfflineAppointment = () => {
             slot,
         }
 
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://hospitology-backend-production.up.railway.app/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
