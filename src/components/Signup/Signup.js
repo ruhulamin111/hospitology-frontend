@@ -8,6 +8,7 @@ import CommonBanner from '../CommonBanner/CommonBanner';
 import { FaFacebook, FaGoogle, FaPhone } from 'react-icons/fa';
 import signin from '../../assets/login.jpg'
 import { updateProfile } from 'firebase/auth';
+import useToken from '../../hooks/useToken/useToken';
 
 const Signin = () => {
     const [signInWithGoogle, gUser, gLoadding, gError] = useSignInWithGoogle(auth);
@@ -15,6 +16,8 @@ const Signin = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const navigate = useNavigate()
     const location = useLocation()
+    const [token] = useToken(user || gUser)
+
     const from = location?.state?.from?.pathname || '/';
     let userError;
     if (gError || error) {
@@ -23,8 +26,11 @@ const Signin = () => {
     if (gLoadding || loading) {
         return <Loading></Loading>
     }
-
+    if (token) {
+        navigate(from, { replace: true })
+    }
     const onSubmit = async (data) => {
+        console.log(data);
         if (data.password === data.confirmpassword) {
             await createUserWithEmailAndPassword(data.email, data.password)
             await updateProfile({ displayName: data.name })
@@ -33,9 +39,9 @@ const Signin = () => {
             userError = <p>Password dont't match</p>
         }
     };
-    if (user || gUser) {
-        navigate(from, { replace: true })
-    }
+    // if (user || gUser) {
+    //     navigate(from, { replace: true })
+    // }
 
     return (
         <section>
@@ -91,12 +97,12 @@ const Signin = () => {
                                     className="input input-bordered w-full "
                                     {...register("name", {
                                         required: { value: true, message: 'Name is required' },
-                                        pattern: { value: /@[a-z]/, message: 'Provide your full name' }
+                                        // pattern: { value: /@[a-z]/, message: 'Provide your full name' }
                                     })}
                                 />
                                 <label className="label ">
                                     {errors.name?.type === 'required' && <span className="label-text-alt text-red-500 text-sm">{errors.name.message}</span>}
-                                    {errors.name?.type === 'pattern' && <span className="label-text-alt text-red-500 text-sm">{errors.name.message}</span>}
+                                    {/* {errors.name?.type === 'pattern' && <span className="label-text-alt text-red-500 text-sm">{errors.name.message}</span>} */}
                                 </label>
                             </div>
 

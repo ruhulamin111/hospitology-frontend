@@ -7,6 +7,7 @@ import Loading from '../Loading/Loading';
 import CommonBanner from '../CommonBanner/CommonBanner';
 import { FaFacebook, FaGoogle, FaPhone } from 'react-icons/fa';
 import signin from '../../assets/login.jpg'
+import useToken from '../../hooks/useToken/useToken';
 
 const Signin = () => {
     const [signInWithGoogle, gUser, gLoadding, gError] = useSignInWithGoogle(auth);
@@ -14,6 +15,8 @@ const Signin = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const navigate = useNavigate()
     const location = useLocation()
+    const [token] = useToken(user || gUser)
+
     const from = location?.state?.from?.pathname || '/';
     let userError;
     if (gError || error) {
@@ -27,7 +30,7 @@ const Signin = () => {
         console.log(data)
         signInWithEmailAndPassword(data.email, data.password)
     };
-    if (user || gUser) {
+    if (token) {
         navigate(from, { replace: true })
     }
 
