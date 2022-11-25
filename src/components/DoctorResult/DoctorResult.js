@@ -7,15 +7,17 @@ const DoctorResult = () => {
     const [doctors] = useDoctors()
 
     return (
-        <div className='w-11/12 mx-auto py-10 h-scree'>
+        <div className='w-11/12 mx-auto py-10'>
+
             <div className='flex items-center justify-between'>
                 <h1 className='text-4xl font-bold text-primary mb-5 '>Fall in love with <br /> <span className='text-secondary'>Our Specialist</span></h1>
                 <FaLongArrowAltRight className='text-3xl text-primary' />
             </div>
             <Swiper
-                className='cursor-pointer'
+                className='cursor-pointer '
                 spaceBetween={50}
                 slidesPerView={3}
+
             >
                 {
                     doctors?.slice(0, 5).map((doctor, index) => <SwiperSlide key={index} className='my-10'>

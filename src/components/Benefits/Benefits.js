@@ -1,11 +1,16 @@
 import React from 'react'
 import benefit from '../../assets/onlineconsulting.jpg'
 import { FaCheckCircle } from 'react-icons/fa';
+import { motion } from "framer-motion"
 
 const Benefits = () => {
 
     return (
-        <div className="hero py-10 w-11/12 mx-auto">
+        <motion.div className="hero py-10 w-11/12 mx-auto"
+            initial={{ opacity: 0, x: 500 }}
+            transition={{ duration: 1 }}
+            whileInView={{ opacity: 1, x: 0 }}
+        >
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <img src={benefit} className="max-w-sm rounded-lg shadow-2xl" alt='' />
                 <div>
@@ -42,7 +47,7 @@ const Benefits = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

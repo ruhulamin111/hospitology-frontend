@@ -2,11 +2,10 @@ import React from 'react'
 import { FaLongArrowAltRight } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
-
 const ShowDoctor = ({ searchDoctors }) => {
 
     return (
-        <div className='w-11/12 mx-auto py-10'>
+        <div className='w-11/12 mx-auto py-10'  >
             <h1 className='text-4xl font-bold text-secondary mb-5 text-center'>Your Searched Doctors</h1>
             {searchDoctors.length === 0 && <p className='text-center mt-10 text-black'>Please input the value for doctor results </p>}
             <div className='grid lg:grid-cols-3 gap-5'>

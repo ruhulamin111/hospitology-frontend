@@ -1,12 +1,17 @@
 import React from 'react'
 import { FaStethoscope } from 'react-icons/fa';
 import { FaUserNurse } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
 
 const Achievement = () => {
 
     return (
-        <div className='w-11/12 mx-auto py-10'>
+        <motion.div className='w-11/12 mx-auto py-10'
+            initial={{ opacity: 0, y: 100, scale: .8 }}
+            transition={{ duration: 1 }}
+            whileInView={{ opacity: 1, y: 1, scale: 1 }}
+        >
             <h1 className='text-4xl font-bold text-primary mb-10 float-right'>We are achieved </h1>
             <div className="stats shadow w-full text-black">
                 <div className="stat">
@@ -35,7 +40,7 @@ const Achievement = () => {
                     <div className="stat-title">Satisfied patient</div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

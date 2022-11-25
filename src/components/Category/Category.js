@@ -7,12 +7,17 @@ import service4 from '../../assets/mothercare.png'
 import service5 from '../../assets/babycare.png'
 import service6 from '../../assets/specialdoctor.png'
 import { FaLongArrowAltRight } from 'react-icons/fa';
+import { motion } from 'framer-motion'
 
 
 const Category = () => {
 
     return (
-        <div className='w-11/12 mx-auto py-10'>
+        <motion.div className='w-11/12 mx-auto py-10'
+            initial={{ opacity: 0, x: 100, scale: .5 }}
+            transition={{ duration: .8 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+        >
             <h1 className='text-4xl font-bold text-primary mb-5 text-right'>Our Qualitiful <br /> <span className='text-secondary'>Services</span></h1>
 
             <div className="grid lg:grid-cols-3  gap-5 text-black">
@@ -107,7 +112,7 @@ const Category = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 
