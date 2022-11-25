@@ -54,9 +54,9 @@ const OfflineAppointment = () => {
 
     return (
         <div>
-            <CommonBanner />
+            <CommonBanner title={'Booking your offline appointment'} name={'Offline appointment'} />
             <div className="w-11/12 mx-auto my-10">
-                <div className="grid lg:grid-cols-2">
+                <div className="grid lg:grid-cols-2 text-black">
                     <div>
                         <DayPicker
                             mode="single"
@@ -93,14 +93,14 @@ const OfflineAppointment = () => {
                             {/* Put this part before </body> tag */}
                             {close === false && <>
                                 <input type="checkbox" id="patient-info" className="modal-toggle" />
-                                <div className="modal modal-bottom sm:modal-middle">
+                                <div className="modal modal-bottom sm:modal-middle text-black">
                                     <div className="modal-box">
                                         <label htmlFor="patient-info" className="btn btn-md btn-circle absolute right-2 top-2">✕</label>
                                         <h3 className="font-bold text-xl">Patient Information</h3>
                                         <form onSubmit={handleSubmit} className='text-center my-5'>
-                                            <input type="text" value={format(date, 'PP')} className="input input-bordered w-full max-w-sm mt-5" />
+                                            <input type="text" value={format(date, 'PP')} className="input input-bordered w-full max-w-sm mt-5 border-accent" />
 
-                                            <select name='slot' className="select select-bordered w-full max-w-sm mt-5">
+                                            <select name='slot' className="select select-bordered w-full max-w-sm mt-5 border-accent">
                                                 <option disabled selected>Select slot</option>
                                                 {
                                                     doctorDetails.visithour?.map((slot, index) => <option key={index} value='10:00-10:20'>{slot}</option>
@@ -115,11 +115,11 @@ const OfflineAppointment = () => {
                                             <option value='11:40-12:00'>11.40-12.00</option> */}
                                             </select>
 
-                                            <input name='phone' type="number" placeholder="+88" className="input input-bordered w-full max-w-sm mt-5" required />
+                                            <input name='phone' type="number" placeholder="+88" className="input input-bordered w-full max-w-sm mt-5 border-accent" required />
 
-                                            <input name='name' type="text" placeholder="Patient name" className="input input-bordered w-full max-w-sm mt-5" required />
+                                            <input name='name' type="text" placeholder="Patient name" className="input input-bordered w-full max-w-sm mt-5 border-accent" required />
 
-                                            <input name='address' type="text" placeholder="Address" className="input input-bordered w-full max-w-sm mt-5" />
+                                            <input name='address' type="text" placeholder="Address" className="input input-bordered w-full max-w-sm mt-5 border-accent" />
 
                                             <input type="submit" value='Submit' className=" btn btn-primary w-full max-w-sm mt-5" >
                                             </input>

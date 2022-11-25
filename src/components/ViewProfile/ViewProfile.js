@@ -10,7 +10,8 @@ const ViewProfile = () => {
 
     return (
         <div>
-            <CommonBanner />
+            <CommonBanner title={'Doctor profile'} name={'Doctor details'} />
+
             <div className="w-11/12 mx-auto my-10">
                 <div className="grid lg:grid-cols-2 gap-10">
                     <div className=''>
@@ -20,7 +21,7 @@ const ViewProfile = () => {
                             <Link to='/offlineappointment' className="btn btn-secondary text-white">Appointment online</Link>
                         </div>
                     </div>
-                    <div>
+                    <div className='text-black'>
                         <h1 className="text-2xl font-bold mb-5">
                             {doctorDetails.name}
                         </h1>
