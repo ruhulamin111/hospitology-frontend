@@ -101,7 +101,7 @@ const Signin = () => {
                             <p className='cursor-pointer text-md p-3 rounded-full border border-primary hover:border-secondary hover:bg-secondary hover:text-white duration-300 ease-in '><FaFacebook /></p>
                             <p className='cursor-pointer text-md p-3 rounded-full border border-primary hover:border-secondary hover:bg-secondary hover:text-white duration-300 ease-in '><FaPhone /></p>
                         </div>
-                        <p className='pt-2'>Don’t Have an Account?
+                        <p className='pt-2'>Don\'t Have an Account?
                             <Link className='text-primary' to='/signup'> Create One</Link>
                         </p>
                     </div>

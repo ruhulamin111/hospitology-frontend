@@ -15,6 +15,12 @@ import 'react-toastify/dist/ReactToastify.css';
 import Dashboard from './components/Dashboard/Dashboard';
 import ListAppointment from './components/ListAppointment/ListAppointment';
 import Payment from './components/Payment/Payment';
+import Department from './components/Department/Department';
+import Branch from './components/Branch/Branch';
+import PatientCare from './components/PatientCare/PatientCare';
+import Hospital from './components/Hospital/Hospital';
+import Dental from './components/Dental/Dental';
+import Diagonistic from './components/Diagonistic/Diagonistic';
 
 
 
@@ -26,6 +32,12 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/about' element={<About />}></Route>
+        <Route path='/department' element={<Department />}></Route>
+        <Route path='/branch' element={<Branch />}></Route>
+        <Route path='/patient' element={<PatientCare />}></Route>
+        <Route path='/hospital' element={<Hospital />}></Route>
+        <Route path='/dental' element={<Dental />}></Route>
+        <Route path='/diagonistic' element={<Diagonistic />}></Route>
         <Route path='/viewprofile/:id' element={<ViewProfile />}></Route>
         <Route path='/offlineappointment/:id' element={<RequireAuth>
           <OfflineAppointment />

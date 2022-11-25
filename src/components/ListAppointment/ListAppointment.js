@@ -7,7 +7,12 @@ const ListAppointment = () => {
     const [appointment, setAppointment] = useState([])
     useEffect(() => {
         if (user) {
-            fetch(`https://hospitology-backend-production.up.railway.app/bookings?email=${user.email}`)
+            fetch(`https://hospitology-backend-production.up.railway.app/bookings?email=${user.email}`, {
+                method: "GET",
+                headers: {
+                    'authorization': `${localStorage.getItem('token')}`
+                }
+            })
                 .then(res => res.json())
                 .then(data => setAppointment(data))
         }
