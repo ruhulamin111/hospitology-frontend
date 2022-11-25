@@ -16,7 +16,7 @@ const Category = () => {
         <motion.div className='w-11/12 mx-auto py-10'
             initial={{ opacity: 0, x: 100, scale: .5 }}
             transition={{ duration: .8 }}
-            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            whileInView={{ opacity: 1, x: 1, scale: 1 }}
         >
             <h1 className='text-4xl font-bold text-primary mb-5 text-right'>Our Qualitiful <br /> <span className='text-secondary'>Services</span></h1>
 

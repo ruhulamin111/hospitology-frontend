@@ -7,9 +7,9 @@ const Benefits = () => {
 
     return (
         <motion.div className="hero py-10 w-11/12 mx-auto"
-            initial={{ opacity: 0, y: -100 }}
-            transition={{ duration: 1 }}
-            whileInView={{ opacity: 1, y: 1 }}
+            initial={{ opacity: 0, y: 100, scale: .5 }}
+            transition={{ duration: .8 }}
+            whileInView={{ opacity: 1, y: 1, scale: 1 }}
         >
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <img src={benefit} className="max-w-sm rounded-lg shadow-2xl" alt='' />

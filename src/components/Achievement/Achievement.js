@@ -8,9 +8,9 @@ const Achievement = () => {
 
     return (
         <motion.div className='w-11/12 mx-auto py-10'
-            initial={{ opacity: 0, y: 100, scale: .8 }}
-            transition={{ duration: 1 }}
-            whileInView={{ opacity: 1, y: 1, scale: 1 }}
+            initial={{ opacity: 0, x: 100, scale: .5 }}
+            transition={{ duration: .8 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
         >
             <h1 className='text-4xl font-bold text-primary mb-10 float-right'>We are achieved </h1>
             <div className="stats shadow w-full text-black">

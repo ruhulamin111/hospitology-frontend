@@ -27,10 +27,9 @@ const Signin = () => {
     }
 
     const onSubmit = (data) => {
-        console.log(data)
         signInWithEmailAndPassword(data.email, data.password)
     };
-    if (token) {
+    if (user || gUser) {
         navigate(from, { replace: true })
     }
 

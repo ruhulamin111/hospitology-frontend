@@ -21,10 +21,10 @@ const ListAppointment = () => {
     return (
         <div>
             <div className="overflow-x-auto my-4">
-                <table className="table w-full">
+                <table className="table w-full text-black">
                     <thead>
-                        <tr>
-                            <th>No.</th>
+                        <tr className='text-white'>
+                            <th className=''>No.</th>
                             <th>Doctor</th>
                             <th>Visit hour</th>
                             <th>Date of appointment</th>

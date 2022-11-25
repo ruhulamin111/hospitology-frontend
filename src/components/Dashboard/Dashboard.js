@@ -12,9 +12,9 @@ const Dashboard = () => {
                     <label htmlFor="my-drawer-2" className="btn btn-secondary text-white drawer-button lg:hidden">Side menu</label>
 
                 </div>
-                <div className="drawer-side">
+                <div className="drawer-side ">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-60 text-base-content">
+                    <ul className="menu p-4 w-60  text-black z-100">
                         {/* <!-- Sidebar content here --> */}
                         <li><Link to='listappointment'>Appointment list</Link></li>
                         <li><Link to='payment'>Payment details</Link></li>

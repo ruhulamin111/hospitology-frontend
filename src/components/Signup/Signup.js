@@ -39,9 +39,9 @@ const Signin = () => {
             userError = <p>Password dont't match</p>
         }
     };
-    // if (user || gUser) {
-    //     navigate(from, { replace: true })
-    // }
+    if (user || gUser) {
+        navigate(from, { replace: true })
+    }
 
     return (
         <section>
