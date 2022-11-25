@@ -16,12 +16,12 @@ const Banner = ({ setBranch, setDepartment }) => {
             <div className="hero-overlay bg-opacity-70"></div>
             <div className="hero-content text-center text-neutral-content">
                 <div className="max-w-md">
-                    <h1 className="mb-5 text-5xl font-bold text-secondary">Find Your Doctor</h1>
-                    <p className="mb-5 text-white">To serve the humanity as a whole with this noble vision Hospitology journey in June 1992. </p>
+                    <h1 className="mb-5 text-5xl font-bold text-primary">Find Your Doctor</h1>
+                    <p className="mb-5 text-black">To serve the humanity as a whole with this noble vision Hospitology journey in June 1992. </p>
 
-                    <form onSubmit={handleSubmit}>
-                        <div className='mb-5'>
-                            <select name='branch' className="select select-bordered w-full max-w-xs text-black">
+                    <form onSubmit={handleSubmit} className='w-full'>
+                        <div className='mb-5 w-full'>
+                            <select name='branch' className="select select-bordered w-full text-black">
                                 <option disabled selected>Select branch name</option>
                                 <option value='Mirpur'>Mirpur, Dhaka, Bangladesh</option>
                                 <option value='Uttara'>Uttara, Dhaka, Bangladesh</option>
@@ -30,8 +30,8 @@ const Banner = ({ setBranch, setDepartment }) => {
                                 <option value='Mohammadpur'>Mohammadpur, Dhaka, Bangladesh</option>
                             </select>
                         </div>
-                        <div className='mb-5'>
-                            <select name='department' className="select select-bordered w-full max-w-xs text-black">
+                        <div className='mb-5 '>
+                            <select name='department' className="select select-bordered w-full  text-black">
                                 <option disabled selected>Select department name</option>
                                 <option value='Medicine'>Medicine and Orthopedic</option>
                                 <option value='Cardiology'>Cardiology and Vascular Sergery</option>
@@ -40,7 +40,7 @@ const Banner = ({ setBranch, setDepartment }) => {
                                 <option value='Dental'>Dental and Headache</option>
                             </select>
                         </div>
-                        <input type='submit' value='Search' className="btn btn-secondary text-white" />
+                        <input type='submit' value='Search' className="btn btn-secondary text-white w-full" />
                     </form>
 
                     {/* <div className='mb-5'>

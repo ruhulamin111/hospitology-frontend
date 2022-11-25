@@ -47,15 +47,15 @@ const Footer = () => {
             </footer>
             <footer className="footer border-t border-white w-11/12 mx-auto py-5 text-white">
                 <div className="items-center grid-flow-col">
-                    <FaHospitalSymbol className='text-5xl text-primary' />
-                    <p>Hospitology Limited. <br />All copyright reserved &copy; {year}</p>
+                    <FaHospitalSymbol className='text-5xl text-white' />
+                    <p>Hospitology Limited. <br /> All copyright reserved &copy; {year}</p>
                 </div>
                 <div className="md:place-self-center md:justify-self-end">
                     <div className="grid grid-flow-col gap-4">
-                        <Link to='/' className='text-2xl text-white hover:text-white hover:bg-primary duration-300 ease-in p-1 border border-white rounded-full hover:border-primary'><FaFacebook /></Link>
-                        <Link to='/' className='text-2xl text-white hover:text-white hover:bg-primary duration-300 ease-in p-1 border border-white rounded-full hover:border-primary'><FaYoutube /></Link>
-                        <Link to='/' className='text-2xl text-white hover:text-white hover:bg-primary duration-300 ease-in p-1 border border-white rounded-full hover:border-primary'><FaLinkedin /></Link>
-                        <Link to='/' className='text-2xl text-white hover:text-white hover:bg-primary duration-300 ease-in p-1 border border-white rounded-full hover:border-primary'><FaTwitter /></Link>
+                        <Link to='/' className='text-lg text-white hover:text-white hover:bg-primary duration-300 ease-in p-2 border border-white rounded-full hover:border-white'><FaFacebook /></Link>
+                        <Link to='/' className='text-lg text-white hover:text-white hover:bg-primary duration-300 ease-in p-2 border border-white rounded-full hover:border-white'><FaYoutube /></Link>
+                        <Link to='/' className='text-lg text-white hover:text-white hover:bg-primary duration-300 ease-in p-2 border border-white rounded-full hover:border-white'><FaLinkedin /></Link>
+                        <Link to='/' className='text-lg text-white hover:text-white hover:bg-primary duration-300 ease-in p-2 border border-white rounded-full hover:border-white'><FaTwitter /></Link>
                     </div>
                 </div>
             </footer>

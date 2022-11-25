@@ -10,7 +10,7 @@ const Benefits = () => {
                 <img src={benefit} className="max-w-sm rounded-lg shadow-2xl" alt='' />
                 <div>
                     <h1 className="text-4xl font-bold text-secondary">Membership benefits <br /> <span className='text-primary'>You will enjoy</span></h1>
-                    <div className='grid lg:grid-cols-2 gap-5 mt-10'>
+                    <div className='grid lg:grid-cols-2 gap-5 mt-10 text-black'>
                         <div>
                             <div className='flex items-start  gap-3 mb-5'>
                                 <FaCheckCircle className='text-3xl text-secondary' />

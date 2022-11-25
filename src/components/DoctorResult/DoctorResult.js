@@ -7,10 +7,10 @@ const DoctorResult = () => {
     const [doctors] = useDoctors()
 
     return (
-        <div className='w-11/12 mx-auto py-10'>
+        <div className='w-11/12 mx-auto py-10 h-scree'>
             <div className='flex items-center justify-between'>
                 <h1 className='text-4xl font-bold text-primary mb-5 '>Fall in love with <br /> <span className='text-secondary'>Our Specialist</span></h1>
-                <FaLongArrowAltRight className='text-3xl' />
+                <FaLongArrowAltRight className='text-3xl text-primary' />
             </div>
             <Swiper
                 className='cursor-pointer'
@@ -23,7 +23,7 @@ const DoctorResult = () => {
                             <figure className="px-10 pt-10">
                                 <img src={doctor.img} alt="Shoes" className="rounded-xl h-60 object-cover" />
                             </figure>
-                            <div className="card-body items-center text-center">
+                            <div className="card-body items-center text-center text-black">
                                 <h2 className="card-title">{doctor.name}</h2>
                                 <p>{doctor.department}</p>
                                 <p>{doctor.branchname}</p>

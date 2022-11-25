@@ -7,8 +7,8 @@ const ShowDoctor = ({ searchDoctors }) => {
 
     return (
         <div className='w-11/12 mx-auto py-10'>
-            <h1 className='text-4xl font-bold text-primary mb-5 text-center'>Your Searched Doctors</h1>
-            {searchDoctors.length === 0 && <p className='text-center mt-10'>Please search the doctor for results </p>}
+            <h1 className='text-4xl font-bold text-secondary mb-5 text-center'>Your Searched Doctors</h1>
+            {searchDoctors.length === 0 && <p className='text-center mt-10 text-black'>Please input the value for doctor results </p>}
             <div className='grid lg:grid-cols-3 gap-5'>
                 {
                     searchDoctors?.map((doctor, index) => <div
@@ -17,12 +17,12 @@ const ShowDoctor = ({ searchDoctors }) => {
                         <figure className="px-10 pt-10">
                             <img src={doctor.img} alt="Shoes" className="rounded-xl h-60 object-cover" />
                         </figure>
-                        <div className="card-body items-center text-center">
+                        <div className="card-body items-center text-center text-black">
                             <h2 className="card-title">{doctor.name}</h2>
                             <p>{doctor.department}</p>
                             <p>{doctor.branchname}</p>
-                            <div className="card-actions">
-                                <Link to={`/viewprofile/${doctor._id}`} className="font-bold flex items-center gap-2 btn text-white mt-5">
+                            <div className="card-actions w-full">
+                                <Link to={`/viewprofile/${doctor._id}`} className="font-bold flex items-center gap-2 btn text-white mt-5 w-full btn-secondary">
                                     Profile
                                     <FaLongArrowAltRight />
                                 </Link>
