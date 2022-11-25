@@ -21,6 +21,7 @@ import PatientCare from './components/PatientCare/PatientCare';
 import Hospital from './components/Hospital/Hospital';
 import Dental from './components/Dental/Dental';
 import Diagonistic from './components/Diagonistic/Diagonistic';
+import WhatsApp from './components/WhatsApp/WhatsApp';
 
 
 
@@ -57,6 +58,7 @@ function App() {
         <Route path='*' element={<NotFound />}></Route>
       </Routes>
       <Footer />
+      <WhatsApp />
       <ToastContainer />
     </div>
   );

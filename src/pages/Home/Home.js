@@ -7,6 +7,7 @@ import DoctorResult from '../../components/DoctorResult/DoctorResult'
 import ShowDoctor from '../../components/ShowDoctor/ShowDoctor'
 import Testimonial from '../../components/Testimonial/Testimonial'
 import Video from '../../components/Video/Video'
+import WhatsApp from '../../components/WhatsApp/WhatsApp'
 import useSearchDoctors from '../../hooks/useSearchDoctors/useSearchDoctors'
 
 const Home = () => {
@@ -24,7 +25,7 @@ const Home = () => {
       <Achievement />
       <Video />
       <Testimonial />
-
+      <WhatsApp />
     </div>
   )
 }
