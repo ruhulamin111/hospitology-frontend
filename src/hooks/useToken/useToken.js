@@ -6,9 +6,7 @@ import auth from "../../firebase.init"
 const useToken = user => {
     const [token, setToken] = useState('')
     const navigate = useNavigate()
-
     useEffect(() => {
-        console.log('usetoken', user)
         const email = user?.user?.email;
         const currentUser = { email: email }
         if (email) {
@@ -34,7 +32,7 @@ const useToken = user => {
 
                 })
         }
-    }, [user])
+    }, [user, navigate])
 
     return [token]
 }

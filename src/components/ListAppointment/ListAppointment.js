@@ -31,7 +31,7 @@ const ListAppointment = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {
+                        {appointment.length > 0 &&
                             appointment?.map((item, index) => <tr key={index}>
                                 <th>{index + 1}</th>
                                 <td>{item.doctor}</td>
