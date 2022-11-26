@@ -14,7 +14,9 @@ const ListAppointment = () => {
                 }
             })
                 .then(res => res.json())
-                .then(data => setAppointment(data))
+                .then(data => {
+                    setAppointment(data)
+                })
         }
     }, [user])
 
