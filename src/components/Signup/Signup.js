@@ -30,7 +30,6 @@ const Signin = () => {
         navigate(from, { replace: true })
     }
     const onSubmit = async (data) => {
-        console.log(data);
         if (data.password === data.confirmpassword) {
             await createUserWithEmailAndPassword(data.email, data.password)
             await updateProfile({ displayName: data.name })
@@ -39,9 +38,9 @@ const Signin = () => {
             userError = <p>Password dont't match</p>
         }
     };
-    if (user || gUser) {
-        navigate(from, { replace: true })
-    }
+    // if (user || gUser) {
+    //     navigate(from, { replace: true })
+    // }
 
     return (
         <section>

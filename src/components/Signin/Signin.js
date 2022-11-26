@@ -25,13 +25,16 @@ const Signin = () => {
     if (gLoadding || loading) {
         return <Loading></Loading>
     }
+    if (token) {
+        navigate(from, { replace: true })
+    }
 
     const onSubmit = (data) => {
         signInWithEmailAndPassword(data.email, data.password)
     };
-    if (user || gUser) {
-        navigate(from, { replace: true })
-    }
+    // if (user || gUser) {
+    //     navigate(from, { replace: true })
+    // }
 
     return (
         <section>

@@ -5,7 +5,7 @@ function useSearchDoctors(branch, department) {
     const [searchDoctors, setSearchDoctors] = useState([])
 
     useEffect(() => {
-        fetch(`https://hospitology-backend-production.up.railway.app/searchdoctors?branch=${branch}&department=${department}`)
+        fetch(`http://localhost:5000/searchdoctors?branch=${branch}&department=${department}`)
             .then(res => res.json())
             .then(data => setSearchDoctors(data))
     }, [branch, department])

@@ -4,7 +4,7 @@ function useDoctors() {
     const [doctors, setDoctors] = useState([])
 
     useEffect(() => {
-        fetch(`https://hospitology-backend-production.up.railway.app/doctors`)
+        fetch(`http://localhost:5000/doctors`)
             .then(res => res.json())
             .then(data => setDoctors(data))
     }, [])
