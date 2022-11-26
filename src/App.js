@@ -1,5 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 import OfflineAppointment from './components/OfflineAppointment/OfflineAppointment';
 import RequireAuth from './components/RequireAuth/RequireAuth';
 import Signin from './components/Signin/Signin';
@@ -10,8 +12,6 @@ import Footer from './pages/Footer/Footer';
 import Header from './pages/Header/Header';
 import Home from './pages/Home/Home';
 import NotFound from './pages/NotFound/NotFound';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import Dashboard from './components/Dashboard/Dashboard';
 import ListAppointment from './components/ListAppointment/ListAppointment';
 import Payment from './components/Payment/Payment';
@@ -23,6 +23,7 @@ import Dental from './components/Dental/Dental';
 import Diagonistic from './components/Diagonistic/Diagonistic';
 import WhatsApp from './components/WhatsApp/WhatsApp';
 import AllPatient from './components/AllPatient/AllPatient';
+import RequireAdmin from './components/RequireAdmin/RequireAdmin';
 
 
 
@@ -40,21 +41,19 @@ function App() {
         <Route path='/hospital' element={<Hospital />}></Route>
         <Route path='/dental' element={<Dental />}></Route>
         <Route path='/diagonistic' element={<Diagonistic />}></Route>
-        <Route path='/viewprofile/:id' element={<ViewProfile />}></Route>
-        <Route path='/offlineappointment/:id' element={<RequireAuth>
-          <OfflineAppointment />
-        </RequireAuth>}></Route>
         <Route path='/signin' element={<Signin />}></Route>
         <Route path='/signup' element={<Signup />}></Route>
-        <Route path='/dashboard' element={
-          <RequireAuth>
-            <Dashboard></Dashboard>
-          </RequireAuth>
-        }>
+        <Route path='/viewprofile/:id' element={<ViewProfile />}></Route>
+
+        <Route path='/offlineappointment/:id' element={<RequireAuth>
+          <OfflineAppointment /></RequireAuth>}>
+        </Route>
+
+        <Route path='/dashboard' element={<RequireAuth> <Dashboard /> </RequireAuth>}>
           <Route index element={<ListAppointment />}></Route>
           <Route path='listappointment' element={<ListAppointment />}></Route>
           <Route path='payment' element={<Payment />}></Route>
-          <Route path='allpatient' element={<AllPatient />}></Route>
+          <Route path='allpatient' element={<RequireAdmin> <AllPatient /></RequireAdmin>}></Route>
         </Route>
 
         <Route path='*' element={<NotFound />}></Route>

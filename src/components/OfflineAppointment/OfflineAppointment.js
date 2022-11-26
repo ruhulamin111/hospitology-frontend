@@ -31,7 +31,7 @@ const OfflineAppointment = () => {
             address,
             slot,
         }
-
+        console.log('booking', booking)
         fetch('http://localhost:5000/bookings', {
             method: 'POST',
             headers: {
@@ -103,7 +103,7 @@ const OfflineAppointment = () => {
                                             <select name='slot' className="select select-bordered w-full max-w-sm mt-5 border-accent">
                                                 <option disabled selected>Select slot</option>
                                                 {
-                                                    doctorDetails.visithour?.map((slot, index) => <option key={index} value='10:00-10:20'>{slot}</option>
+                                                    doctorDetails.visithour?.map((slot, index) => <option key={index} value={slot}>{slot}</option>
                                                     )
                                                 }
 

@@ -19,10 +19,10 @@ const Home = () => {
     <div>
       <Banner setBranch={setBranch} setDepartment={setDepartment} />
       <ShowDoctor searchDoctors={searchDoctors} />
+      <Achievement />
       <DoctorResult />
       <Category />
       <Benefits />
-      <Achievement />
       <Video />
       <Testimonial />
       <WhatsApp />

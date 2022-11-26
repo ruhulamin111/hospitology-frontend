@@ -14,4 +14,4 @@ function useSearchDoctors(branch, department) {
 
 }
 
-export default useSearchDoctors
+export default useSearchDoctors;

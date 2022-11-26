@@ -26,9 +26,7 @@ const Signin = () => {
     if (gLoadding || loading) {
         return <Loading></Loading>
     }
-    if (token) {
-        navigate(from, { replace: true })
-    }
+
     const onSubmit = async (data) => {
         if (data.password === data.confirmpassword) {
             await createUserWithEmailAndPassword(data.email, data.password)
@@ -38,6 +36,9 @@ const Signin = () => {
             userError = <p>Password dont't match</p>
         }
     };
+    if (token) {
+        navigate(from, { replace: true })
+    }
     // if (user || gUser) {
     //     navigate(from, { replace: true })
     // }
