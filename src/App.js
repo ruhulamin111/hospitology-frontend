@@ -22,6 +22,7 @@ import Hospital from './components/Hospital/Hospital';
 import Dental from './components/Dental/Dental';
 import Diagonistic from './components/Diagonistic/Diagonistic';
 import WhatsApp from './components/WhatsApp/WhatsApp';
+import AllPatient from './components/AllPatient/AllPatient';
 
 
 
@@ -53,6 +54,7 @@ function App() {
           <Route index element={<ListAppointment />}></Route>
           <Route path='listappointment' element={<ListAppointment />}></Route>
           <Route path='payment' element={<Payment />}></Route>
+          <Route path='allpatient' element={<AllPatient />}></Route>
         </Route>
 
         <Route path='*' element={<NotFound />}></Route>

@@ -32,7 +32,7 @@ const ListAppointment = () => {
                     </thead>
                     <tbody>
                         {
-                            appointment.map((item, index) => <tr key={index}>
+                            appointment?.map((item, index) => <tr key={index}>
                                 <th>{index + 1}</th>
                                 <td>{item.doctor}</td>
                                 <td>{item.slot}</td>
